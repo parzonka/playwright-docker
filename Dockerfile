@@ -32,4 +32,4 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /workdir
 
 # Install Playwright locally inside /tests/node_modules
-RUN npm init -y && npm install playwright@latest && npx install playwright/test@latest && npx playwright install msedge
+RUN npm init -y && npm install playwright@latest playwright/test@latest && npx playwright install msedge
