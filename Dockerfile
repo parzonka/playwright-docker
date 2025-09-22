@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y \
     xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the latest Playwright
-RUN npm install -g playwright@latest
+# Set working directory
+WORKDIR /workdir
 
-# Install only Microsoft Edge browser binaries
-RUN npx playwright install msedge
+# Install Playwright locally inside /tests/node_modules
+RUN npm init -y && npm install playwright@latest && npx install playwright/test@latest && npx playwright install msedge
