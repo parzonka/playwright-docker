@@ -2,6 +2,7 @@ FROM node:20-bookworm
 
 # Install system dependencies required by Chromium/Edge
 RUN apt-get update && apt-get install -y \
+    curl \
     wget \
     gnupg \
     libatk1.0-0 \
