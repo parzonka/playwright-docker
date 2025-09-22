@@ -2,8 +2,8 @@ name: Build and Push Docker image to Docker Hub
 
 on:
   push:
-    branches: [ "main" ]   # Trigger when you push to main
-  workflow_dispatch:       # Allow manual run from GitHub UI
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/playwright-docker:latest
-
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/playwright:latest
