@@ -31,8 +31,11 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /workdir
 
-# Install the latest Playwright
-RUN npm install -g playwright@latest typescript ts-node @types/node
+# Set NODE_PATH for global module resolution
+ENV NODE_PATH=/usr/local/lib/node_modules
+
+# Install the latest Playwright with typescript
+RUN npm install -g playwright @playwright/test typescript ts-node @types/node
 
 # Install only Microsoft Edge browser binaries
 RUN npx playwright install msedge
