@@ -31,5 +31,8 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /workdir
 
-# Install Playwright locally inside /tests/node_modules
-RUN npm init -y && npm install playwright@latest playwright/test@latest && npx playwright install msedge
+# Install the latest Playwright
+RUN npm install -g playwright@latest
+
+# Install only Microsoft Edge browser binaries
+RUN npx playwright install msedge
