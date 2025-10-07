@@ -1,4 +1,4 @@
-FROM node:20-bookworm
+FROM node:24-bookworm
 
 # Install system dependencies required by Chromium/Edge
 RUN apt-get update && apt-get install -y \
