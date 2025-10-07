@@ -36,7 +36,7 @@ WORKDIR /workdir
 ENV NODE_PATH=/usr/local/lib/node_modules
 
 # Install the latest Playwright with typescript
-RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv https-proxy-agent cross-env orval
+RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv cross-env undici orval
 
 # Install only Microsoft Edge browser binaries
 RUN npx playwright install msedge
