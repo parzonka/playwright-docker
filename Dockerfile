@@ -1,6 +1,6 @@
 FROM node:24-bookworm
 
-# Install system dependencies required by Chromium/Edge
+# Install system dependencies required by Chromium
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
@@ -36,7 +36,7 @@ WORKDIR /workdir
 ENV NODE_PATH=/usr/local/lib/node_modules
 
 # Install the latest Playwright with typescript
-RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv cross-env undici orval
+RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv cross-env undici orval dayjs mailparser
 
 # Install browser binaries
 RUN npx playwright install chrome
