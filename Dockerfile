@@ -36,7 +36,7 @@ WORKDIR /workdir
 ENV NODE_PATH=/usr/local/lib/node_modules
 
 # Install the latest Playwright with typescript
-RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv cross-env undici orval dayjs mailparser
+RUN npm install -g playwright @playwright/test typescript ts-node @types/node dotenv cross-env undici orval dayjs mailparser date-fns
 
 # Install browser binaries
 RUN npx playwright install chrome
